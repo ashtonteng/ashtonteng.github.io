@@ -1,0 +1,3 @@
+baseurl: /hellwalker
+exclude: ['README.md']
+port: 2000

@@ -1,0 +1,29 @@
+html {
+	margin: 0 auto;
+	padding: 100px;
+	font: Arial;
+	color:red;
+}
+
+.current {
+	background-color:blue;
+	color:white;
+}
+
+nav {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+.nav > li {
+	display: inline-block;
+}
+
+.nav-top {
+	font-size: 20pt;
+}
+
+.nav-bottom {
+	font-size: 10pt;
+}
