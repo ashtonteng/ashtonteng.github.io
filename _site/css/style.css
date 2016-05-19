@@ -45,6 +45,11 @@ body, h1, h2, h3, h4, p, a {
 	background: rgba(49, 59, 75, 1);
 }
 
+.navbar-index {
+	border: none;
+	background: rgba(49, 59, 75, 0.6);
+}
+
 .navbar .navbar-nav {
   display: inline-block;
   float: none;
