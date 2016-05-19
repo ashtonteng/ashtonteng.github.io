@@ -35,19 +35,11 @@
 
   {{content}}
 
-    {% if page.url == "/" %}
-      <div class="footer-index">
-    {% endif %}
-
-    {% if page.url contains "about" or page.url contains "resume" or page.url contains "blog"  or page.url contains "contact" %}
-      <div class="footer">
-    {% endif %}
-
+  <div class="footer {% if page.url == "/" %}footer-index{% endif %}">
 		{% include footer.html %}
 	</div>
 
     <!-- Latest compiled and minified JavaScript -->
-    <script src="{{site.baseurl}}/js/jquery-1.11.3.min.js"></script>   
     <script src="{{site.baseurl}}/js/bootstrap.min.js"></script>
   </body>
 </html>
