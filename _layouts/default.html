@@ -32,10 +32,20 @@
     <header>
 		{% include nav.html %}
 	</header>
-	{{content}}
-	<div class="footer">
+
+  {{content}}
+
+    {% if page.url == "/" %}
+      <div class="footer-index">
+    {% endif %}
+
+    {% if page.url contains "about" or page.url contains "resume" or page.url contains "blog"  or page.url contains "contact" %}
+      <div class="footer">
+    {% endif %}
+
 		{% include footer.html %}
 	</div>
+
     <!-- Latest compiled and minified JavaScript -->
     <script src="{{site.baseurl}}/js/bootstrap.min.js"></script>
   </body>
