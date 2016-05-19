@@ -1,7 +1,12 @@
 ---
-layout: news
+layout: page
 ---
-
-<h1>{{page.title}}</h1>
-
-{{content}}
+<span class="glyphicon glyphicon-arrow-left btn btn-default btn-lg"></span> <span class="glyphicon glyphicon-arrow-right btn btn-default btn-lg"></span>
+<h2>{{page.title}}</h2>
+<h4><i>{{page.date}}</i></h4>
+<br>
+<div class="panel panel-default">
+  <div class="panel-body">
+    {{content}}
+  </div>
+</div>
