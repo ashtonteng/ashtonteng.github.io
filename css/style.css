@@ -158,6 +158,10 @@ body, h1, h2, h3, h4, p, a {
 	font-size:13pt;
 }
 
+.jumbotron h4 {
+	font-size:11pt;
+}
+
 .footer {
 	position: fixed;
 	left: 0px;

@@ -9,11 +9,12 @@ layout: page
 	  <div class="panel panel-default">
 	    <div class="panel-heading">
 	      <h2 class="panel-title"><i><a href ="{{site.baseurl}}{{post.url}}">{{post.title}}</a></i></h2>
+	      <h4><i>{{ post.date | date: '%B %d, %Y' }}</i></h4>
 	    </div>
 	    <div class="panel-body">
 			<p>{{post.description}}  <a href="{{site.baseurl}}{{post.url}}"><span class="glyphicon glyphicon-arrow-right"></span></a></p>
-			<!--<p>{{post.date}}</p>
-			<p><i>{{post.categories}}</i></p>-->
+
+			<!--<p><i>{{post.categories}}</i></p>-->
 
 	    </div>
 	  </div>
