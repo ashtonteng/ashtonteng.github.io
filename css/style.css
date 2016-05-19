@@ -112,6 +112,10 @@ body, h1, h2, h3, h4, p, a {
 	background-color:#5c6898;
 }
 
+.banner {
+	height:100%;
+}
+
 @media (max-width: 767px) {
 	.banner {
 	background-image: url(../images/background-xs.jpg);
@@ -135,10 +139,6 @@ body, h1, h2, h3, h4, p, a {
 	height: 450px;
 	background-size: cover;
 	background-image: url(../images/me.jpg);
-}
-
-.container {
-	height: 100vh;
 }
 
 .nametext {
