@@ -2,6 +2,7 @@
 layout: post
 title:  "Simultaneously Uncovering the Patterns of Brain Regions Involved in Different Story Reading Subprocesses"
 date:   2016-05-15
+source: http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0112575
 description: Many language studies in Cognitive Neuroscience focus on a specific feature of language (syntactic role, part of speech, etc), and try to design artificial stimuli that only varies in that specific feature, and trying to decipher which part of the brain is responsible for the varied response. However, these approaches risks not being very ecologically valid, and it is unclear how the results fit into how natural language works in the brain. This study tries to find a comprehensive model of language in the brain with regards to natural language stimuli.
 categories: stuff
 ---
