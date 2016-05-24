@@ -15,9 +15,9 @@ categories: stuff
 the model predicts neural activity at each voxel independently. It assumes that each time a particular story feature f_j occurs, it will generate the same response signature in voxel v, weighted by that feature’s value.
 The signal in a particular voxel at a particular time is modeled as:
 
-![alt text]({{site.baseurl}}/images/equation.png "Equation")
+![Equation]({{site.baseurl}}/images/2016-05-15-Simultaneously Uncovering the Patterns of Brain Regions Involved in Different Story Reading Subprocesses/equation.png "Equation")
 
-![alt text]({{site.baseurl}}/images/graph.png "Graph")
+![Graph]({{site.baseurl}}/images/2016-05-15-Simultaneously Uncovering the Patterns of Brain Regions Involved in Different Story Reading Subprocesses/graph.png "Graph")
 
 where `j = 1:F (F=195)` loops through the rows of the feature vector
 
@@ -29,7 +29,7 @@ f<sub>j</sub>(t-k) is the value of the jth feature in the t-k’th vector
 
 *my own example to help my understanding*:
 
-![alt text]({{site.baseurl}}/images/table.png "Table")
+![Table]({{site.baseurl}}/images/2016-05-15-Simultaneously Uncovering the Patterns of Brain Regions Involved in Different Story Reading Subprocesses/table.png "Table")
 
 At voxel X, t = 3,
 F=1, k=1,
