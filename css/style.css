@@ -1,44 +1,3 @@
-@font-face {
-    font-family: "Segoe UI";
-    font-weight: 200;
-    src: local("Segoe UI Light");
-}
-@font-face {
-    font-family: "Segoe UI";
-    font-weight: 300;
-    src: local("Segoe UI Semilight");
-}
-@font-face {
-    font-family: "Segoe UI";
-    font-weight: 400;
-    src: local("Segoe UI");
-}
-@font-face {
-    font-family: "Segoe UI";
-    font-weight: 600;
-    src: local("Segoe UI Semibold");
-}
-@font-face {
-    font-family: "Segoe UI";
-    font-weight: 700;
-    src: local("Segoe UI Bold");
-}
-@font-face {
-    font-family: "Segoe UI";
-    font-style: italic;
-    font-weight: 400;
-    src: local("Segoe UI Italic");
-}
-@font-face {
-    font-family: "Segoe UI";
-    font-style: italic;
-    font-weight: 700;
-    src: local("Segoe UI Bold Italic");
-}
-
-body, h1, h2, h3, h4, p, a {
-	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Segoe UI", Helvetica, Arial, "Lucida Grande", sans-serif;
-}
 
 img {
 	max-width: 100%;
@@ -62,7 +21,7 @@ img {
 
 .navbar-index {
 	border: none;
-	background: rgba(49, 59, 75, 0.6);
+	background: rgba(81, 164, 253, 0.3);
 }
 
 .navbar .navbar-nav {
@@ -160,7 +119,7 @@ img {
 }
 
 .nametext {
-	font-family: "HelveticaNeueThin", "HelveticaNeue-Thin", "Helvetica Neue Thin", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Arial", sans-serif; font-weight:200; font-stretch:normal;
+	font-family: "HelveticaNeueThin", "HelveticaNeue-Thin", "Helvetica Neue Thin", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Arial", sans-serif; font-weight:100; font-stretch:normal;
 	margin-top:8vh;
 	padding-bottom: 1.5vh;
 	width: auto;
@@ -216,7 +175,7 @@ img {
 	position: fixed;
 	left: 0px;
 	bottom: 0px;
-	background: rgba(49, 59, 75, 0.6);
+	background: rgba(81, 164, 253, 0.3);
 	width: 100%;
 	padding-top: 1%;
 }
