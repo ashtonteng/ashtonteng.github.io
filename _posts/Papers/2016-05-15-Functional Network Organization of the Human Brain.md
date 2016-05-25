@@ -4,7 +4,7 @@ title:  "Functional Network Organization of the Human Brain"
 date:   2016-05-24
 source: http://www.sciencedirect.com/science/article/pii/S0896627311007926
 description: This study applies graph theory to the analysis of resting state functional connectivity MRI (rs-fcMRI) brain networks. Graph theory is used to analyze rs-fcMRI data because it can adequately describe the brain as a complex network, and model properties at the level of the entire graph, subgraphs, or individual nodes.The paper tries to solve one problem in using graph theory to study functional brain organization - the difficulty of defining individual nodes that make up a brain network.
-categories: stuff
+categories: papers
 ---
 
 This study applies `graph theory` to the analysis of `resting state functional connectivity MRI (rs-fcMRI)` brain networks. In a graph theory model, there are nodes, ties (relationships between nodes), and collections of nodes and ties which are called graphs or networks. Graph theory is used to analyze rs-fcMRI data because it can adequately describe the brain as a complex network, and model properties at the level of the entire graph, subgraphs, or individual nodes. Graph theory can also quantify hierarchy and substructure within a graph, identify hubs and critical nodes, determine how easily traffic flows in different portions at different scales of a network, and estimate the controllability of a system.

@@ -1,9 +1,16 @@
 ---
 layout: page
 ---
-<a href="{{site.baseurl}}/blog.html" class="glyphicon glyphicon-arrow-left btn btn-default btn-lg"></a>
+{% if page.url contains 'papers' %}
+<a href="{{site.baseurl}}/papers.html" class="glyphicon glyphicon-arrow-left btn btn-default btn-lg"></a>
+{% endif %}
+
+{% if page.url contains 'poetry' %}
+<a href="{{site.baseurl}}/poetry.html" class="glyphicon glyphicon-arrow-left btn btn-default btn-lg"></a>
+{% endif %}
+
 <h2>{{page.title}}</h2>
-<h4><i>{{ page.date | date: '%B %d, %Y' }} / <a href="{{page.source}}">article source</a></i></h4>
+<h4><i>{{ page.date | date: '%B %d, %Y' }}{% if page.url contains 'papers' %} / <a href="{{page.source}}">article source</a>{% endif %}</i></h4>
 <br>
 <div class="panel panel-default">
   <div class="panel-body">

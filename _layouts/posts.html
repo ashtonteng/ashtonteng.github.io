@@ -1,0 +1,16 @@
+---
+layout: page
+---
+
+<div class="col-xs-12">
+  <h1>Posts</h1><br>
+</div>
+
+<ul style="width:97%;margin: 0 auto;" class="nav nav-tabs">
+  <li role="presentation" class="{% if page.url contains 'papers' %}active{% endif %}"><a href="{{site.baseurl}}/papers.html">Reading</a></li>
+  <li role="presentation" class="{% if page.url contains 'poetry' %}active{% endif %}"><a href="{{site.baseurl}}/poetry.html">Poetry</a></li>
+</ul>
+
+<div style="height:20px"></div>
+
+{{content}}
