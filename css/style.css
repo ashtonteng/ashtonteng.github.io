@@ -1,3 +1,178 @@
+@font-face {
+    font-family: "Segoe UI";
+    font-weight: 200;
+    src: local("Segoe UI Light");
+}
+@font-face {
+    font-family: "Segoe UI";
+    font-weight: 300;
+    src: local("Segoe UI Semilight");
+}
+@font-face {
+    font-family: "Segoe UI";
+    font-weight: 400;
+    src: local("Segoe UI");
+}
+@font-face {
+    font-family: "Segoe UI";
+    font-weight: 600;
+    src: local("Segoe UI Semibold");
+}
+@font-face {
+    font-family: "Segoe UI";
+    font-weight: 700;
+    src: local("Segoe UI Bold");
+}
+@font-face {
+    font-family: "Segoe UI";
+    font-style: italic;
+    font-weight: 400;
+    src: local("Segoe UI Italic");
+}
+@font-face {
+    font-family: "Segoe UI";
+    font-style: italic;
+    font-weight: 700;
+    src: local("Segoe UI Bold Italic");
+}
+
+body, h1, h2, h3, h4, p, a {
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Segoe UI", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+.loader {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: url('../images/page-loader.gif') 50% 50% no-repeat rgb(249,249,249);
+}
+
+.navbar {
+	border: none;
+	background: rgba(81, 164, 253, 0.3);
+}
+
+.navbar .navbar-nav {
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+  width: 400px;
+  margin-left:-5%;
+}
+
+.navbar .navbar-nav li {
+	width: 20%;
+}
+
+.navbar .navbar-nav li a {
+	color:white;
+}
+
+.navbar .navbar-collapse {
+	margin: 0 auto;
+	text-align: center;
+}
+
+
+.navbar .navbar-nav li.link1 {
+	background-color:#6abe31;
+}
+
+.navbar .navbar-nav li.link1 a:hover {
+	background-color:#569b28;
+}
+
+.navbar .navbar-nav li.link2 {
+	background-color:#f5c53d;
+}
+
+.navbar .navbar-nav li.link2 a:hover {
+	background-color:#d8ae35;
+}
+
+.navbar .navbar-nav li.link3 {
+	background-color:#51a4fd;
+}
+
+.navbar .navbar-nav li.link3 a:hover {
+	background-color:#448ad4;
+}
+
+.navbar .navbar-nav li.link4 {
+	background-color:#ec604f;
+}
+
+.navbar .navbar-nav li.link4 a:hover {
+	background-color:#c55042;
+}
+
+.navbar .navbar-nav li.link5 {
+	background-color:#7685c0;
+}
+
+.navbar .navbar-nav li.link5 a:hover {
+	background-color:#5c6898;
+}
+
+.banner {
+	padding-top:5vh;
+	width: 100%;
+	height: 100vh;
+	background-size: cover;
+}
+
+@media (max-width: 767px) {
+	.banner {
+	background-image: url(../images/background-xs.jpg);
+	}
+}
+
+@media (min-width: 768px) {
+	.banner {
+	background-image: url(../images/background-sm.jpg);
+	}
+}
+
+@media (min-width: 992px) {
+	.banner {
+	background-image: url(../images/background.jpg);
+	}
+}
+
+.nametext {
+	font-family: "HelveticaNeueThin", "HelveticaNeue-Thin", "Helvetica Neue Thin", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Arial", sans-serif; font-weight:200; font-stretch:normal;
+	margin-top:8vh;
+	padding-bottom: 1.5vh;
+	width: auto;
+	color: white;
+	/*background-color: rgba(81, 164, 253, 0.3);*/
+}
+
+.nametext h1 {
+	/*text-shadow: 3px 3px 6px rgba(81, 164, 253, 1.0);*/
+	margin-bottom: 5%;
+}
+
+.nametext h2, h3, h4 {
+	/*text-shadow: 3px 3px 6px rgba(81, 164, 253, 1.0);*/
+}
+
+.footer {
+	position: fixed;
+	left: 0px;
+	bottom: 0px;
+	background: rgba(81, 164, 253, 0.3);
+	width: 100%;
+	padding-top: 1%;
+}
+
+.footer p {
+	text-align: center;
+	color: white;
+}
+
 
 img {
 	max-width: 100%;
