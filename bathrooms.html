@@ -5,7 +5,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
   <style type="text/css">
-    body, html {width: 100%;height: 100%;margin:0;font-family:"微软雅黑";}
+    body, html {width: 100%;height: 100%;margin:0;font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Segoe UI", Helvetica, Arial, "Lucida Grande", sans-serif;}
     #allmap{width:100%;height:100%;}
     p{margin:5px; font-size:14px;}
   </style>
@@ -36,7 +36,7 @@
 
   var points = [
   [116.462346, 39.941475, "Adam's", "三里屯酒吧街54号（UGG对面）", "adams.jpg"], 
-  [116.463577, 39.937911, "De Refter比利时啤酒吧", "工体北路4号院机电院内", "DeRefter.png"],
+  [116.463577, 39.937911, "De Refter 比利时啤酒吧", "工体北路4号院机电院内", "DeRefter.png"],
   [116.417967, 39.933653, "Susu", "钱粮胡同西巷10号（隆福医院北侧）", "adams.jpg"],
   [116.522249, 40.03014, "京西学校 Western Academy of Beijing", "来广营东路3号附近", "wab.png"],
   [116.467505, 39.95225, "联合国艾滋病规划署 UN AIDS", "亮马河南路3号联合国大楼", "adams.jpg"],
@@ -60,8 +60,6 @@
   [116.424472,39.941227, "首都酒坊 Capital Spirits", "辛寺胡同23号", "capitalspirits.jpg"],
   [116.417995,39.950217, "双城咖啡酒吧 Two Cities", "方家胡同46号", "twocities.jpg"]
   [116.461607,39.941814, "微粒子法餐 Particles Kitchen", "三里屯北街81号那里花园2层D205", "particleskitchen.jpg"]
-
-
   ]
 
   for (x in points) {
@@ -70,9 +68,9 @@
 
   function addMarker(x_coord, y_coord, title, info, image) {
     var pt = new BMap.Point(x_coord, y_coord);
-    var marker = new BMap.Marker(pt);
-    //var myIcon = new BMap.Icon("http://developer.baidu.com/map/jsdemo/img/" + image, new BMap.Size(300,157));
-    //var marker = new BMap.Marker(pt,{icon:myIcon});  // 创建标注
+    //var marker = new BMap.Marker(pt);
+    var myIcon = new BMap.Icon("bathroom_images/pin.jpg", new BMap.Size(33,60));
+    var marker = new BMap.Marker(pt,{icon:myIcon});  // 创建标注
     map.addOverlay(marker)
 
     //信息窗口
@@ -86,7 +84,6 @@
     var infoWindow = new BMap.InfoWindow(sContent);
     //点击图标后弹出框
     marker.addEventListener("click", function(e){
-       console.log("hiiii", info)
        map.openInfoWindow(infoWindow, pt);
         //图片加载完毕重绘infowindow
        document.getElementById('imgDemo').onload = function() {

@@ -332,6 +332,12 @@ img {
 	color: white;
 }
 
+.footer a {
+	margin-right:15px;
+	float: right;
+	color: white;
+}
+
 .footer {
 	position: fixed;
 	left: 0px;
