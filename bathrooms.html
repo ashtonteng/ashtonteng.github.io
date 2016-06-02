@@ -10,7 +10,7 @@
     p{margin:5px; font-size:14px;}
   </style>
   <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=gs27ntpTCyq854arGhDvIWRAW9NqalUN"></script>
-  <title>添加/删除工具条、比例尺控件</title>
+  <title>北京性别友善厕所分部图</title>
 </head>
 
 <body>
@@ -22,7 +22,7 @@
 <script type="text/javascript">
   // 百度地图API功能
   var map = new BMap.Map("allmap");
-  map.centerAndZoom(new BMap.Point(116.459228,39.942632), 13);
+  map.centerAndZoom(new BMap.Point(116.459228,39.942632), 15);
 
   var top_left_control = new BMap.ScaleControl({anchor: BMAP_ANCHOR_TOP_LEFT});// 左上角，添加比例尺
   var top_left_navigation = new BMap.NavigationControl();  //左上角，添加默认缩放平移控件
@@ -30,20 +30,72 @@
   /*缩放控件type有四种类型:
   BMAP_NAVIGATION_CONTROL_SMALL：仅包含平移和缩放按钮；BMAP_NAVIGATION_CONTROL_PAN:仅包含平移按钮；BMAP_NAVIGATION_CONTROL_ZOOM：仅包含缩放按钮*/
 
-  var opts = {    
-   width : 250,     // 信息窗口宽度    
-   height: 100,     // 信息窗口高度     // 信息窗口标题  
-  }   
+  //添加控件和比例尺
+  map.addControl(top_left_control);        
+  map.addControl(top_left_navigation);    
 
   var points = [
-  [116.453928,39.942632, "This is Number One", "fox.gif"], 
-  [116.459228,39.942632, "bahahahahahh", "fox.gif"]
-  []
+  [116.462346, 39.941475, "Adam's", "三里屯酒吧街54号（UGG对面）", "adams.jpg"], 
+  [116.463577, 39.937911, "De Refter比利时啤酒吧", "工体北路4号院机电院内", "DeRefter.png"],
+  [116.417967, 39.933653, "Susu", "钱粮胡同西巷10号（隆福医院北侧）", "adams.jpg"],
+  [116.522249, 40.03014, "京西学校 Western Academy of Beijing", "来广营东路3号附近", "wab.png"],
+  [116.467505, 39.95225, "联合国艾滋病规划署 UN AIDS", "亮马河南路3号联合国大楼", "adams.jpg"],
+  [116.412949, 39.941201, "毛毛虫酒吧与披萨", "南大街板厂胡同12号", "maomaochong.jpg"],
+  [116.463899,39.941325, "北京赞客广告传媒有限公司", "北京市朝阳区东三里屯一号院", "adams.jpg"],
+  [116.426494,39.938538, "北京女同志中心 The Lala Salon Activity Center", "东四八条91号", "lalasalon.jpg"],
+  [116.425104,39.95025, "Beijing Mindfulness Centre", "前永康胡同44号", "bmc.png"],
+  [116.476152,39.90559, "淡蓝网 Blued", "百子湾路苹果社区22号街区2号楼B座028", "blued.jpg"],
+  [116.412714,39.947102, "Café Zara", "鼓楼东大街42号", "cafezara.jpg"],
+  [116.409678,39.947085, "The Pool Bar", "鼓楼东大街106号", "thepoolbar.jpg"],
+  [116.440714,39.965162, "北京纪安德 Beijing Gender Institute", "西坝河南路甲1号新天第大厦", "adams.jpg"],
+  [116.440714,39.965262, "北京同志中心 Beijing LGBT Center", "西坝河南路甲1号新天第大厦", "lgbtcenter.jpg"],
+  [116.440714,39.965362, "同语 Common Language", "西坝河南路甲1号新天第大厦", "commonlanguage.jpg"],
+  [116.412775,39.922232, "河沿肉饼 Beijing Pie", "北河沿大街159-2号", "heyanroubing.jpg"],
+  [116.395759,39.9527, "交差点 Crossroads Centre", "大石桥胡同18号（近旧鼓楼大街）", "adams.jpg"],
+  [116.467505,39.95212, "联合国发展计划署 UNDP", "亮马河南路2号联合国大楼", "adams.jpg"],
+  [116.467587,39.952397, "联合国妇女署 UN Women", "亮马河南路2号联合国大楼", "adams.jpg"],
+  [116.426422,39.948046, "满室酒吧 Más Bar", "北新桥头条25号", "masbar.jpg"],
+  [116.412561,39.942424, "蓬蒿剧场 Theatre Without Borders", "北京西城区东棉花胡同35号", "penghao.jpg"],
+  [116.431845,39.946158, "首都酒坊 Capital Spirits", "大菊胡同3号", "capitalspirits.jpg"],
+  [116.424472,39.941227, "首都酒坊 Capital Spirits", "辛寺胡同23号", "capitalspirits.jpg"],
+  [116.417995,39.950217, "双城咖啡酒吧 Two Cities", "方家胡同46号", "twocities.jpg"]
+  [116.461607,39.941814, "微粒子法餐 Particles Kitchen", "三里屯北街81号那里花园2层D205", "particleskitchen.jpg"]
+
+
   ]
 
   for (x in points) {
-    addMarker(points[x][0], points[x][1], points[x][2], points[x][3])
+    addMarker(points[x][0], points[x][1], points[x][2], points[x][3], points[x][4])
   }
+
+  function addMarker(x_coord, y_coord, title, info, image) {
+    var pt = new BMap.Point(x_coord, y_coord);
+    var marker = new BMap.Marker(pt);
+    //var myIcon = new BMap.Icon("http://developer.baidu.com/map/jsdemo/img/" + image, new BMap.Size(300,157));
+    //var marker = new BMap.Marker(pt,{icon:myIcon});  // 创建标注
+    map.addOverlay(marker)
+
+    //信息窗口
+    var sContent =
+    "<div style='max-width:200px'>" + 
+    "<h4 style='margin:0 0 5px 0;padding:0.2em 0'>" + title + "</h4>" + 
+    "<img style='margin:4px' id='imgDemo' src='bathroom_images/" + image + "'" + " width='200px' title='BLA'/>" + 
+    "<p style='margin:0;line-height:1.5;font-size:13px;'>地址: " + info + "</p>" + 
+    "</div>";
+
+    var infoWindow = new BMap.InfoWindow(sContent);
+    //点击图标后弹出框
+    marker.addEventListener("click", function(e){
+       console.log("hiiii", info)
+       map.openInfoWindow(infoWindow, pt);
+        //图片加载完毕重绘infowindow
+       document.getElementById('imgDemo').onload = function() {
+         infoWindow.redraw();   //防止在网速较慢，图片未加载时，生成的信息框高度比图片的总高度小，导致图片部分被隐藏
+       }
+    });
+  }
+
+/*
 
   function addMarker(x_coord, y_coord, info, image) {
     var pt = new BMap.Point(x_coord, y_coord);
@@ -56,31 +108,7 @@
       map.openInfoWindow(infoWindow, pt);
     });
   }
+  */
 
-/*
-  for (x in points) {
-    var pt = new BMap.Point(points[x][0], points[x][1]);
-    var myIcon = new BMap.Icon("http://developer.baidu.com/map/jsdemo/img/" + points[x][2], new BMap.Size(300,157));
-    var marker = new BMap.Marker(pt,{icon:myIcon});  // 创建标注
-    map.addOverlay(marker)
-
-    var opts = {    
-     width : 250,     // 信息窗口宽度    
-     height: 100,     // 信息窗口高度     // 信息窗口标题  
-    }    
-    var infoWindow = new BMap.InfoWindow(points[x][3], opts);  // 创建信息窗口对象    
-        // 打开信息窗口
-
-    //点击图标后弹出框
-    marker.addEventListener("click", function(e){   
-      console.log(points[x])
-      map.openInfoWindow(infoWindow, pt);
-    });
-
-  }
-*/
-
-  //添加控件和比例尺
-    map.addControl(top_left_control);        
-    map.addControl(top_left_navigation);     
+ 
 </script>
