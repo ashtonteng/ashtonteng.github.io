@@ -4,27 +4,82 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+  <link href="css/bootstrap.css" rel="stylesheet">
   <style type="text/css">
     body, html {width: 100%;height: 100%;margin:0;font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Segoe UI", Helvetica, Arial, "Lucida Grande", sans-serif;}
-    #allmap{width:100%;height:100%;}
-    p{margin:5px; font-size:14px;}
+    #allmap {
+      width:100%;
+      height:100%;
+    }
+    p {
+      margin:5px;
+      font-size:14px;
+    }
+    @media only screen and (max-width: 500px) {
+      #box {
+      width:100%;
+      height:auto;
+      position:fixed;
+      top:15px;
+      left:0px;
+      z-index:99999;
+      background-color:rgba(255, 255, 255, 0.7);
+      text-align:center;
+      padding:5px;
+      }
+    }
+    @media only screen and (min-width: 500px) {
+      #box {
+      width:30%;
+      height:auto;
+      position:fixed;
+      top:15px;
+      right:15px;
+      z-index:99999;
+      background-color:rgba(255, 255, 255, 0.7);
+      text-align:center;
+      padding:5px;
+      }
+    }
   </style>
+
   <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=gs27ntpTCyq854arGhDvIWRAW9NqalUN"></script>
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.2.min.js"></script>
   <title>北京性别友善厕所分部图</title>
+  <script>
+    $(document).ready(function(){
+      $("#description").hide();
+      $("#box").click(function(){
+        console.log("hiiiii")
+          $("#description").slideToggle();
+      });
+    });
+    console.log("huh")
+
+
+  </script>
 </head>
 
 <body>
+  <div id="box">
+    <a href="#" style="color:black;text-decoration:none;"><h4>什么是性别友善厕所？</a></h4></a><i class="glyphicon glyphicon-menu-down"></i>
+
+    <p id="description">性别友善厕所是无论性别，任何人都可以使用的厕所。性别友善厕所可以解决很多人群使用厕所的安全问题：例如，带有不同性别儿童的家长，带有残疾的人与他们的护理人员，跨性别者与非传统性别认同者。我们希望通过 “北京性别友善厕所分布图” 使有需要的人能更容易的找到性别友善厕所，同时提高社会对于性别友善厕所的认识，倡导建立更多的性别友善厕所。</p>
+  </div>
   <div id="allmap"></div>
 </body>
 
 </html>
 
 <script type="text/javascript">
+
+
+
   // 百度地图API功能
   var map = new BMap.Map("allmap");
   map.centerAndZoom(new BMap.Point(116.440638,39.939841), 14);
 
-  var top_left_control = new BMap.ScaleControl({anchor: BMAP_ANCHOR_TOP_LEFT});// 左上角，添加比例尺
+  var top_left_control = new BMap.ScaleControl({anchor: BMAP_ANCHOR_BOTTOM_LEFT});// 左上角，添加比例尺
   var top_left_navigation = new BMap.NavigationControl();  //左上角，添加默认缩放平移控件
   var top_right_navigation = new BMap.NavigationControl({anchor: BMAP_ANCHOR_TOP_RIGHT, type: BMAP_NAVIGATION_CONTROL_SMALL}); //右上角，仅包含平移和缩放按钮
   /*缩放控件type有四种类型:
@@ -75,7 +130,7 @@
 
     //信息窗口
     var sContent =
-    "<div style='max-width:200px'>" + 
+    "<div style='max-width:200px' class='info'>" + 
     "<h4 style='margin:0 0 5px 0;padding:0.2em 0'>" + title + "</h4>" + 
     "<img style='margin:4px' id='imgDemo' src='bathroom_images/" + image + "'" + " width='200px' title='BLA'/>" + 
     "<p style='margin:0;line-height:1.5;font-size:13px;'>地址: " + info + "</p>" + 
