@@ -9,8 +9,9 @@
     body, html {width: 100%;height: 100%;margin:0;font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Segoe UI", Helvetica, Arial, "Lucida Grande", sans-serif;}
     #allmap {
       width:100%;
-      height:100%;
+      height:70%;
     }
+    #r-result{width:100%;}
     p {
       margin:5px;
       font-size:14px;
@@ -49,7 +50,6 @@
     $(document).ready(function(){
       $("#description").hide();
       $("#box").click(function(){
-        console.log("hiiiii")
           $("#description").slideToggle();
       });
     });
@@ -64,8 +64,10 @@
     <a href="#" style="color:black;text-decoration:none;"><h4>什么是性别友善厕所？</a></h4></a><i class="glyphicon glyphicon-menu-down"></i>
 
     <p id="description">性别友善厕所是无论性别，任何人都可以使用的厕所。性别友善厕所可以解决很多人群使用厕所的安全问题：例如，带有不同性别儿童的家长，带有残疾的人与他们的护理人员，跨性别者与非传统性别认同者。我们希望通过 “北京性别友善厕所分布图” 使有需要的人能更容易的找到性别友善厕所，同时提高社会对于性别友善厕所的认识，倡导建立更多的性别友善厕所。</p>
+
   </div>
   <div id="allmap"></div>
+  <div id="r-result"></div>
 </body>
 
 </html>
@@ -86,7 +88,8 @@
 
   //添加控件和比例尺
   map.addControl(top_left_control);        
-  map.addControl(top_left_navigation);    
+  map.addControl(top_left_navigation);
+
 
   var points = [
   [116.462346,39.941475, "Adam's", "三里屯酒吧街54号（UGG对面）", "adams.jpg"], 
@@ -116,10 +119,10 @@
   [116.461607,39.941814, "微粒子法餐 Particles Kitchen", "三里屯北街81号那里花园2层D205", "particleskitchen.jpg"],
   [116.618272,39.926517, "GS乐点杂志 GaySpot Magazine", "北京朝阳区常新路6号院3~1~301", "gs.jpg"]
   [116.425117,39.942016, "Q-Space", "东四十二条辛寺胡同27号", "adams.jpg"]
-  ]
+  ];
 
   for (x in points) {
-    addMarker(points[x][0], points[x][1], points[x][2], points[x][3], points[x][4])
+    addMarker(points[x][0], points[x][1], points[x][2], points[x][3], points[x][4]);
   }
 
   function addMarker(x_coord, y_coord, title, info, image) {
@@ -127,7 +130,7 @@
     //var marker = new BMap.Marker(pt);
     var myIcon = new BMap.Icon("bathroom_images/pin.jpg", new BMap.Size(33,60));
     var marker = new BMap.Marker(pt,{icon:myIcon});  // 创建标注
-    map.addOverlay(marker)
+    map.addOverlay(marker);
 
     //信息窗口
     var sContent =
@@ -137,8 +140,16 @@
     "<p style='margin:0;line-height:1.5;font-size:13px;'>地址: " + info + "</p>" + 
     "</div>";
 
+    $("#r-result").append("<p id='label'><a href='#'>" + title + "</a></p>");
+
     var infoWindow = new BMap.InfoWindow(sContent);
     //点击图标后弹出框
+
+    document.getElementById("label").addEventListener("click", function(){
+      console.log("hiiiii");
+      $("#box").append("<h1>WHAT</h1>");
+    });
+
     marker.addEventListener("click", function(e){
        map.openInfoWindow(infoWindow, pt);
         //图片加载完毕重绘infowindow
@@ -146,8 +157,7 @@
          infoWindow.redraw();   //防止在网速较慢，图片未加载时，生成的信息框高度比图片的总高度小，导致图片部分被隐藏
        }
     });
-  }
-
+}
 /*
 
   function addMarker(x_coord, y_coord, info, image) {
