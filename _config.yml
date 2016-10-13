@@ -1,3 +1,4 @@
 baseurl: 
 exclude: ['README.md']
 port: 2000
+google_analytics: UA-85661409-1
