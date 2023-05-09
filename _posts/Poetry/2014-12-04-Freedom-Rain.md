@@ -23,7 +23,3 @@ to the beats of ardent chants,
 funneled into my brain ---  
 an overwhelming frenzied calm  
 in this stormy freedom rain.  
-
-![Protest]({{site.baseurl}}/images/poetry/protest1.jpg "Protest")
-
-![Protest]({{site.baseurl}}/images/poetry/protest2.jpg "Protest")
